@@ -1,0 +1,14 @@
+<script>
+    import GradientText from 'svelte-gradient-typography';
+
+    export let value = -1;
+    value = Math.round(value * 10) / 10;
+</script>
+
+<div class="flex flex-col items-center justify-center text-center">
+    <div class="flex justify-center items-center mb-2">
+        <GradientText size="60px">{value}%</GradientText>
+    </div>
+    <span class="font-bold">of Days Visited</span>
+    <span class="text-xs">since 2019 (or when your account was made)</span>
+</div>
