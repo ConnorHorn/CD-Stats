@@ -61,34 +61,34 @@
 					complete: function(parsedData) {
                         if(filename ==="badges.csv"){
                             badgesLeaderboard = calcBadges(parsedData.data);
-                            console.log("Badges Leaderboard",badgesLeaderboard)
+                            // console.log("Badges Leaderboard",badgesLeaderboard)
                         }
                         else if(filename ==="bookmarks.csv"){
                             bookmarksCount = calcBookmarks(parsedData.data);
-                            console.log("Bookmarks Count",bookmarksCount)
+                            // console.log("Bookmarks Count",bookmarksCount)
                         }
                         else if(filename ==="flags.csv"){
                             flagsData = calcFlags(parsedData.data);
-                            console.log("Flags Data",flagsData)
+                            // console.log("Flags Data",flagsData)
                         }
                         else if(filename ==="likes.csv"){
                             likesData = calcLikes(parsedData.data);
-                            console.log("Likes Data",likesData)
+                            // console.log("Likes Data",likesData)
                         }
                         else if(filename ==="user_archive.csv"){
                             archiveData = calcArchive(parsedData.data);
-                            console.log("Archive Data",archiveData)
+                            // console.log("Archive Data",archiveData)
                         }
                         else if(filename ==="visits.csv"){
                             visitsData = calcVisits(parsedData.data);
-                            console.log("Visits Data",visitsData)
+                            // console.log("Visits Data",visitsData)
                         }
                         else if(filename ==="queued_posts.csv"){
                             numQueue = calcQueue(parsedData.data);
-                            console.log("# of posts in queue",numQueue)
+                            // console.log("# of posts in queue",numQueue)
                         }
                         else {
-                            console.log(`Results for ${filename}:`, parsedData.data);
+                            // console.log(`Results for ${filename}:`, parsedData.data);
                         }
 					},
 					error: function(error) {
@@ -166,15 +166,15 @@
                     <Accordion>
                         <AccordionItem>
                             <svelte:fragment slot="summary">What is this?</svelte:fragment>
-                            <svelte:fragment slot="content">(content)</svelte:fragment>
+                            <svelte:fragment slot="content">A website that summarizes statistics from a given users account on ChiefDelphi.com. It is for entertainment value only.</svelte:fragment>
                         </AccordionItem>
                         <AccordionItem>
                             <svelte:fragment slot="summary">How do I get the Data?</svelte:fragment>
-                            <svelte:fragment slot="content">(content)</svelte:fragment>
+                            <svelte:fragment slot="content">Go to your Chief Delphi account preferences, and find the "Export Data" section. Click the button to request your data, and wait until you receive a PM with your data. You can then just drag that file straight into the dropbox here.</svelte:fragment>
                         </AccordionItem>
                         <AccordionItem>
                             <svelte:fragment slot="summary">How do I know this is safe?</svelte:fragment>
-                            <svelte:fragment slot="content">(content)</svelte:fragment>
+                            <svelte:fragment slot="content">This is a great question and one that I had to work around quite a bit. The site runs entirely in your browser, with no data leaving your computer. All of the statistics and analytics are calculated locally, meaning nobody else can see them. If you want to be extra cautious, you can unzip the data, and edit the user archive CSV to set all the posts to be empty. You can also edit the preferences json to delete any personal info. The page does not use any content from your posts text, nor your email, or the like. You can validate the claims of privacy by watching the Network tab of Inspect Element and see nothing is being exchanged beyond the initial serving of the webpage.</svelte:fragment>
                         </AccordionItem>
                         <!-- ... -->
                     </Accordion>
@@ -191,8 +191,12 @@
 
     {#if $storyDone}
 
+        <div class="overflow-x-hidden">
+
 
 <Stats {...statsProps} {...userData} />
+
+        </div>
 
     {:else}
 
