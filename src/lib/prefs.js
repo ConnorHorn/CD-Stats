@@ -14,7 +14,7 @@ function extractUserData(jsonString) {
     let ignored_usernames = data.user.ignored_usernames;
 
     // Return an object with the extracted data
-    console.log(username, admin, badge_count, user_field_1, profile_view_count, second_factor_enabled, associated_accounts, muted_usernames, ignored_usernames);
+    // console.log(username, admin, badge_count, user_field_1, profile_view_count, second_factor_enabled, associated_accounts, muted_usernames, ignored_usernames);
     return {
         username,
         admin,

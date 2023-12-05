@@ -8,7 +8,6 @@
 
     export let visitsData;
 
-    console.log(visitsData)
 
     const mobilePercent = visitsData.visitedPhonePercent/100; // Your input integer
     const totalVisits = visitsData.visitedCount;

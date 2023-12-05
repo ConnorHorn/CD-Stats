@@ -2,7 +2,6 @@
     import GradientText from 'svelte-gradient-typography';
 
     export let value = -1;
-    console.log(value)
 
     let plural = "Likes";
     if(value === 1) plural = "Like";

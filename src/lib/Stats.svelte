@@ -80,7 +80,6 @@
     export let muted_usernames;
     export let ignored_usernames;
 
-    console.log("Stats Loaded")
     // console.log(badgesLeaderboard)
     // console.log(bookmarksCount)
     // console.log(flagsData)
