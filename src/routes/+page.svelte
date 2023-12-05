@@ -9,6 +9,7 @@
     import Storyteller from "$lib/Story/Storyteller.svelte";
     import GradientText from 'svelte-gradient-typography';
     import { writable } from 'svelte/store';
+    import {onMount} from "svelte";
 
 
 
@@ -24,8 +25,25 @@
     let numQueue;
     let statsProps;
     let userData;
+    let size;
 
     let showHelpCard = writable(false);
+
+    onMount(() => {
+        // Function to update size based on screen width
+        const updateSize = () => {
+            size = window.innerWidth < 640 ? '70px' : '120px';
+        };
+
+        // Set initial size and add event listener for window resize
+        updateSize();
+        window.addEventListener('resize', updateSize);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', updateSize);
+        };
+    });
 
     function toggleHelpCard() {
         showHelpCard.update(n => !n);
@@ -128,7 +146,7 @@
 
     <div class="flex flex-col justify-between h-screen">
         <div class="flex flex-col items-center justify-center flex-grow">
-            <GradientText class="mb-4">
+            <GradientText class="mb-4" size={size}>
                 CD-stats
             </GradientText>
 
