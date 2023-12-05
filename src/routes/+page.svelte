@@ -111,6 +111,10 @@
 
 </script>
 
+<svelte:head>
+    <title>CD-Stats</title>
+</svelte:head>
+
 
 
 {#if !loaded}
