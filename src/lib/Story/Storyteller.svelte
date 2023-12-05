@@ -55,11 +55,18 @@
 
     }
 
+    function skipYapping(){
+        $storyDone = true;
+    }
+
 
 
 </script>
 
 <div class="flex justify-center items-center h-screen">
+    <button class="absolute top-0 right-0 m-4 btn variant-filled btn-sm" on:click={skipYapping}>
+        Skip Yapping
+    </button>
     {#each componentConfigs as { component, props }, index}
         {#if index === currentComponentIndex}
             <div in:fade={{ delay:751, duration: 750 }} out:fade={{ duration: 750 }}>
