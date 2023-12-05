@@ -243,7 +243,7 @@
     {/if}
 
     <div class="card grid-item grid-item--width500 p-1 w-full sm:w-fit h-fit " in:fly={{ y: Math.random()*300-150, x:Math.random()*300-150, duration: 750 }} >
-        <DayOfWeekRadar/>
+        <DayOfWeekRadar days={visitsData.timeReadByWeekday}/>
     </div>
 
     <div class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit " in:fly={{ y: Math.random()*300-150, x:Math.random()*300-150, duration: 750 }} >

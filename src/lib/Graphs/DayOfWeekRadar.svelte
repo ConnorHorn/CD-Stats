@@ -6,15 +6,17 @@
 
     let radarChartElement;
 
+    export let days;
+
     // Simulated data object
     const timeReadByWeekday = {
-        Monday: 653810,
-        Tuesday: 723803,
-        Wednesday: 710036,
-        Thursday: 625367,
-        Friday: 443475,
-        Saturday: 469676,
-        Sunday: 645773
+        Monday: days["Monday"],
+        Tuesday: days["Tuesday"],
+        Wednesday: days["Wednesday"],
+        Thursday: days["Thursday"],
+        Friday: days["Friday"],
+        Saturday: days["Saturday"],
+        Sunday: days["Sunday"]
     };
 
     // Create the labels and data arrays from the object
