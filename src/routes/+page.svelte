@@ -60,48 +60,53 @@
         if (parts.length >= 5) {
             const usernameParts = parts.slice(1, -3);
 
-            $displayUsername = usernameParts.join('-');
+            // $displayUsername = usernameParts.join('-');
         }
 
 		const zip = await JSZip.loadAsync(zipFile);
+
 		for (const [filename, file] of Object.entries(zip.files)) {
-            if(filename==='preferences.json'){
+
+
+            if(filename.includes('preferences.json') && !filename.includes('MACOS')){
                 const prefContent = await file.async("string");
 
                 const jsonData = JSON.parse(prefContent);
 
+
                 userData = extractUserData(jsonData);
+                $displayUsername = userData.username;
             }
 
-			if (filename.endsWith('.csv')) {
+			if (filename.includes('.csv') && !filename.includes('MACOS')) {
 				const csvContent = await file.async('string');
 				Papa.parse(csvContent, {
 					complete: function(parsedData) {
-                        if(filename ==="badges.csv"){
+                        if(filename.includes("badges.csv")){
                             badgesLeaderboard = calcBadges(parsedData.data);
                             // console.log("Badges Leaderboard",badgesLeaderboard)
                         }
-                        else if(filename ==="bookmarks.csv"){
+                        else if(filename.includes("bookmarks.csv")){
                             bookmarksCount = calcBookmarks(parsedData.data);
                             // console.log("Bookmarks Count",bookmarksCount)
                         }
-                        else if(filename ==="flags.csv"){
+                        else if(filename.includes("flags.csv")){
                             flagsData = calcFlags(parsedData.data);
                             // console.log("Flags Data",flagsData)
                         }
-                        else if(filename ==="likes.csv"){
+                        else if(filename.includes("likes.csv")){
                             likesData = calcLikes(parsedData.data);
                             // console.log("Likes Data",likesData)
                         }
-                        else if(filename ==="user_archive.csv"){
+                        else if(filename.includes("user_archive.csv")){
                             archiveData = calcArchive(parsedData.data);
                             // console.log("Archive Data",archiveData)
                         }
-                        else if(filename ==="visits.csv"){
+                        else if(filename.includes("visits.csv")){
                             visitsData = calcVisits(parsedData.data);
                             // console.log("Visits Data",visitsData)
                         }
-                        else if(filename ==="queued_posts.csv"){
+                        else if(filename.includes("queued_posts.csv")){
                             numQueue = calcQueue(parsedData.data);
                             // console.log("# of posts in queue",numQueue)
                         }

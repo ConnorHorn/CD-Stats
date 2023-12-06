@@ -3,10 +3,10 @@
     import TypeIt from 'typeit';
     import { createEventDispatcher } from 'svelte';
 
-    export let muted_users = [];
-    export let ignored_users = [];
+    export let muted_usernames = [];
+    export let ignored_usernames = [];
 
-    let combinedList = muted_users.concat(ignored_users);
+    let combinedList = muted_usernames.concat(ignored_usernames);
 
     let typeItInstance;
     let typeItElement;
