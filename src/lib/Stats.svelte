@@ -77,25 +77,20 @@
 	<!--    {$username}'s Dashboard-->
 	<!--    </div>-->
 
-	<div
-		class="card col-span-1 row-span-1 p-5"
-		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
-	>
-		<MobilePercent {visitsData} />
-	</div>
 
-	<div
-		class="card col-span-1 row-span-1 p-5"
-		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
-	>
-		<AvgTimePerPost value={visitsData.avgTimePerPost} />
-	</div>
 
 	<div
 		class="card col-span-1 row-span-1 p-5"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<PostsRead value={visitsData.numPostsRead} />
+	</div>
+
+	<div
+			class="card col-span-1 row-span-1 p-5"
+			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
+	>
+		<AvgTimePerPost value={visitsData.avgTimePerPost} />
 	</div>
 
 	<div
@@ -195,12 +190,6 @@
 	>
 		<PostsPosted value={archiveData.postCount} />
 	</div>
-	<div
-		class="card col-span-1 row-span-1 p-5"
-		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
-	>
-		<ProfileViews value={profile_view_count} />
-	</div>
 
 	<div
 		class="card col-span-3 row-span-2 p-5"
@@ -209,18 +198,42 @@
 		<PostsByMonth array={archiveData.postsByMonth} />
 	</div>
 
-	<div
-		class="card col-span-1 row-span-1 p-5"
-		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
-	>
-		<BlockedUsers value={ignored_usernames.length + muted_usernames.length} />
-	</div>
 
 	<div
 		class="card col-span-3 row-span-2 p-5"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<PostsByYear array={archiveData.postsByYear} />
+	</div>
+
+	{#if archiveData.firstPost && archiveData.firstPost !== ''}
+		<div
+				class="card col-span-1 row-span-1 p-5"
+				in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
+		>
+			<FirstPost value={archiveData.firstPost} />
+		</div>
+	{/if}
+
+	<div
+			class="card col-span-1 row-span-1 p-5"
+			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
+	>
+		<QueuePosts value={numQueue} />
+	</div>
+
+	<div
+			class="card col-span-1 row-span-1 p-5"
+			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
+	>
+		<ProfileViews value={profile_view_count} />
+	</div>
+
+	<div
+			class="card col-span-1 row-span-1 p-5"
+			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
+	>
+		<BadgeCount value={badge_count} />
 	</div>
 
 	<div
@@ -237,12 +250,6 @@
 		<FlagsByMonth array={flagsData.monthlyCountArray} />
 	</div>
 
-	<div
-		class="card col-span-1 row-span-1 p-5"
-		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
-	>
-		<FlagsTable array={flagsData.flagLeaderboardArray} />
-	</div>
 
 	<div
 		class="card col-span-2 row-span-1 p-5"
@@ -268,11 +275,12 @@
 	</div>
 
 	<div
-		class="card col-span-1 row-span-1 p-5"
-		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
+			class="card col-span-1row-span-1 p-5"
+			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
-		<QueuePosts value={numQueue} />
+		<FlagsTable array={flagsData.flagLeaderboardArray} />
 	</div>
+
 
 	<div
 		class="card col-span-1 row-span-1 p-5"
@@ -302,14 +310,6 @@
 		<LikesGivenByMonth array={likesData.monthlyCounts} />
 	</div>
 
-	{#if archiveData.firstPost && archiveData.firstPost !== ''}
-		<div
-			class="card col-span-1 row-span-1 p-5"
-			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
-		>
-			<FirstPost value={archiveData.firstPost} />
-		</div>
-	{/if}
 
 	{#if archiveData.postCount > 0}
 		<div
@@ -324,24 +324,27 @@
 		</div>
 	{/if}
 
-	<div
-		class="card col-span-2 row-span-2 p-5"
-		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
-	>
-		<DayOfWeekRadar days={visitsData.timeReadByWeekday} />
-	</div>
 
 	<div
-		class="card col-span-1 row-span-1 p-5"
-		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
-	>
-		<BadgeCount value={badge_count} />
-	</div>
-
-	<div
-		class="card col-span-1 row-span-1 p-5"
-		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
+			class="card col-span-1 row-span-1 p-5"
+			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<BlockedUsers value={ignored_usernames.length + muted_usernames.length} />
 	</div>
+
+	<div
+			class="card col-span-1 row-span-1 p-5"
+			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
+	>
+		<MobilePercent {visitsData} />
+	</div>
+
+	<div
+		class="card col-span-2 row-span-2 p-5 max-h-min"
+		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
+	>
+
+		<DayOfWeekRadar days={visitsData.timeReadByWeekday} />
+	</div>
+
 </div>
