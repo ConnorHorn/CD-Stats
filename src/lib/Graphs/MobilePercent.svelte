@@ -57,8 +57,6 @@
 	});
 </script>
 
-<main class="main-container">
-	<section>
-		<canvas bind:this={pieChartElement} />
-	</section>
-</main>
+<div class="flex items-center justify-center">
+	<canvas bind:this={pieChartElement} />
+</div>

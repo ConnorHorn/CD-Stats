@@ -7,7 +7,7 @@
 	if (value === 1) plural = 'Like';
 </script>
 
-<div class="flex flex-col items-center justify-center text-center">
+<div class="flex h-full flex-col items-center justify-center text-center">
 	<div class="mr-1 flex items-center justify-center">
 		<GradientText size="70px">{value}</GradientText>
 	</div>

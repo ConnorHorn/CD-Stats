@@ -7,7 +7,7 @@
 	if (value === 1) plural = 'PM';
 </script>
 
-<div class="flex flex-col items-center justify-center">
+<div class="flex h-full flex-col items-center justify-center">
 	<div class="mr-1">
 		<GradientText size="70px">{value}</GradientText>
 	</div>

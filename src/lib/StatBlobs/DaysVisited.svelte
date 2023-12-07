@@ -4,7 +4,7 @@
 	export let value = -1;
 </script>
 
-<div class="flex flex-col items-center justify-center text-center">
+<div class="flex h-full flex-col items-center justify-center text-center">
 	<div class="mb-2 flex items-center justify-center">
 		<GradientText size="70px">{value}</GradientText>
 	</div>

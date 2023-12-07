@@ -77,8 +77,6 @@
 	});
 </script>
 
-<main class="main-container">
-	<section>
-		<canvas bind:this={barChartElement} />
-	</section>
-</main>
+<div class="flex h-full items-center justify-center">
+	<canvas bind:this={barChartElement} />
+</div>

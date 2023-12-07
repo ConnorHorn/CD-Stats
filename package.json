@@ -38,7 +38,6 @@
 	"dependencies": {
 		"@floating-ui/dom": "1.5.3",
 		"chart.js": "^3.9.1",
-		"isotope-layout": "^3.0.6",
 		"jszip": "^3.10.1",
 		"papaparse": "^5.4.1",
 		"svelte-gradient-typography": "^0.0.3",
