@@ -21,8 +21,6 @@
 			.pause(300)
 			.type(`Pretty Cool Username`)
 			.pause(750)
-			.type('<br><span class="text-sm">jk</span>')
-			.pause(350)
 			.delete()
 			.type(`Make it yourself?`)
 			.pause(750)
@@ -39,9 +37,6 @@
 			.pause(750)
 			.delete()
 			.pause(500)
-			.type(`<span class="text-5xl">Real Creative</span>`)
-			.pause(750)
-			.delete()
 			.exec(() => {
 				setTimeout(() => dispatch('typingCompleted', { message: 'completed' }), 0);
 			})

@@ -8,9 +8,7 @@
 	import BlockedStory from '$lib/Story/BlockedStory.svelte';
 	import { storyDone } from '$lib/store.js';
 	import Conclusion from '$lib/Story/Conclusion.svelte';
-
-	// ... import up to Component10
-
+	import ImageStory from "$lib/Story/ImageStory.svelte";
 	export let badgesLeaderboard;
 	export let bookmarksCount;
 	export let flagsData;
@@ -38,7 +36,8 @@
 		{ component: PostingStory, props: { archiveData } },
 		{ component: BookmarksStory, props: { bookmarksCount } },
 		{ component: BlockedStory, props: { muted_usernames, ignored_usernames } },
-		{ component: Conclusion, props: {} }
+		{ component: ImageStory, props: {archiveData, visitsData, bookmarksCount, flagsData, username}},
+		{ component: Conclusion, props: {} },
 	];
 
 	// // Change component every 10 seconds

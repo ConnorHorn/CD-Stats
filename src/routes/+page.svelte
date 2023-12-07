@@ -208,7 +208,8 @@
 								delete any personal info. The page does not use any content from your posts text,
 								nor your email, or the like. You can validate the claims of privacy by watching the
 								Network tab of Inspect Element and see nothing is being exchanged beyond the initial
-								serving of the webpage.</svelte:fragment
+								serving of the webpage. You can also turn your device to airplane mode after loading
+								the site</svelte:fragment
 							>
 						</AccordionItem>
 						<!-- ... -->
