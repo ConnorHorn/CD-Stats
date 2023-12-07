@@ -58,8 +58,8 @@
 	}
 </script>
 
-<div class="flex justify-center items-center h-screen">
-	<button class="absolute top-0 right-0 m-4 btn variant-filled btn-sm" on:click={skipYapping}>
+<div class="flex h-screen items-center justify-center">
+	<button class="variant-filled btn btn-sm absolute right-0 top-0 m-4" on:click={skipYapping}>
 		Skip Yapping
 	</button>
 	{#each componentConfigs as { component, props }, index}

@@ -133,7 +133,7 @@
 </svelte:head>
 
 {#if !loaded}
-	<div class="absolute inset-x-0 bottom-0 flex justify-center items-end">
+	<div class="absolute inset-x-0 bottom-0 flex items-end justify-center">
 		<div class="mb-4">
 			Created by
 			<a href="https://github.com/ConnorHorn" class="font-bold underline" target="_blank"
@@ -142,12 +142,12 @@
 		</div>
 	</div>
 
-	<div class="flex flex-col justify-between h-screen">
-		<div class="flex flex-col items-center justify-center flex-grow">
+	<div class="flex h-screen flex-col justify-between">
+		<div class="flex flex-grow flex-col items-center justify-center">
 			<GradientText class="mb-4" {size}>CD-stats</GradientText>
 
-			<div class="w-2/3 lg:w-1/3 h-64 p-6 text-center">
-				<FileDropzone bind:files on:change={handleFiles} class="w-full h-full">
+			<div class="h-64 w-2/3 p-6 text-center lg:w-1/3">
+				<FileDropzone bind:files on:change={handleFiles} class="h-full w-full">
 					<span
 						slot="message"
 						class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"
@@ -158,10 +158,10 @@
 			</div>
 		</div>
 
-		<div class="text-white text-base p-4 absolute bottom-0 left-0">
+		<div class="absolute bottom-0 left-0 p-4 text-base text-white">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				class="w-16 h-16 cursor-pointer"
+				class="h-16 w-16 cursor-pointer"
 				id="help"
 				viewBox="0 0 24 24"
 				role="button"
@@ -179,8 +179,8 @@
 		</div>
 
 		{#if $showHelpCard}
-			<div class="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm">
-				<div class="card p-4 bg-white rounded shadow-lg w-7/8 sm:w-1/3">
+			<div class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm">
+				<div class="w-7/8 card rounded bg-white p-4 shadow-lg sm:w-1/3">
 					<Accordion>
 						<AccordionItem>
 							<svelte:fragment slot="summary">What is this?</svelte:fragment>
@@ -214,7 +214,7 @@
 						<!-- ... -->
 					</Accordion>
 					<button
-						class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+						class="mt-4 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-700"
 						on:click={toggleHelpCard}>Close</button
 					>
 				</div>

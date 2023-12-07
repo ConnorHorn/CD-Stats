@@ -87,7 +87,7 @@
 	// console.log(numQueue)
 </script>
 
-<div class="grid m-6">
+<div class="m-6 grid">
 	<!--<div class="card  grid-item grid-item&#45;&#45;width600 p-5 w-full sm:w-fit h-fit ">-->
 	<!--    <ExampleChart/>-->
 	<!--</div>-->
@@ -96,174 +96,174 @@
 	<!--    </div>-->
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<MobilePercent {visitsData} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<AvgTimePerPost value={visitsData.avgTimePerPost} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<PostsRead value={visitsData.numPostsRead} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<TimeRead value={visitsData.timeRead} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<DaysVisited value={visitsData.visitedCount} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<PercentVisited value={visitsData.visitedPercent} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<DayRecord timeReadByDay={visitsData.timeReadByDay} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width600 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width600 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<TimeByMonth array={visitsData.timeReadByMonth} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width600 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width600 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<TimeByYear array={visitsData.timeReadByYear} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<BookmarkCount value={bookmarksCount} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<LikeCount value={archiveData.likeCount} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width500 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width500 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<TopicsTable array={archiveData.topTopics} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width600 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width600 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<LikesByMonth array={archiveData.likesByMonth} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width600 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width600 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<LikesByYear array={archiveData.likesByYear} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<PMsSent value={archiveData.pmCount} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width600 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width600 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<PMsByMonth array={archiveData.pmsByMonth} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<PostsPosted value={archiveData.postCount} />
 	</div>
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<ProfileViews value={profile_view_count} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width600 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width600 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<PostsByMonth array={archiveData.postsByMonth} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<BlockedUsers value={ignored_usernames.length + muted_usernames.length} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width600 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width600 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<PostsByYear array={archiveData.postsByYear} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width300 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width300 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<BadgesTable array={badgesLeaderboard} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width600 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width600 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<FlagsByMonth array={flagsData.monthlyCountArray} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width300 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width300 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<FlagsTable array={flagsData.flagLeaderboardArray} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width300 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width300 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<CategoriesTable array={archiveData.topCategories} />
@@ -271,7 +271,7 @@
 
 	{#if flagsData.firstFlagDate !== ''}
 		<div
-			class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+			class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 		>
 			<FirstFlag value={flagsData.firstFlagDate} />
@@ -279,42 +279,42 @@
 	{/if}
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<FlagsDealt value={flagsData.totalCount} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<QueuePosts value={numQueue} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<LikedDelete value={likesData.likedDeletedPostCount} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<LikesUndone value={likesData.undidLikeCount} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width600 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width600 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<LikesGivenByYear array={likesData.yearlyCounts} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width600 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width600 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<LikesGivenByMonth array={likesData.monthlyCounts} />
@@ -322,7 +322,7 @@
 
 	{#if archiveData.firstPost && archiveData.firstPost !== ''}
 		<div
-			class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+			class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 		>
 			<FirstPost value={archiveData.firstPost} />
@@ -331,7 +331,7 @@
 
 	{#if archiveData.postCount > 0}
 		<div
-			class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+			class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 		>
 			<LikesPerPost
@@ -343,21 +343,21 @@
 	{/if}
 
 	<div
-		class="card grid-item grid-item--width500 p-1 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width500 card h-fit w-full p-1 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<DayOfWeekRadar days={visitsData.timeReadByWeekday} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<BadgeCount value={badge_count} />
 	</div>
 
 	<div
-		class="card grid-item grid-item--width200 p-5 w-full sm:w-fit h-fit"
+		class="grid-item grid-item--width200 card h-fit w-full p-5 sm:w-fit"
 		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<BlockedUsers value={ignored_usernames.length + muted_usernames.length} />

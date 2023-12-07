@@ -64,6 +64,6 @@
 	});
 </script>
 
-<div class="card p-5 w-full sm:w-fit h-fit text-2xl">
+<div class="card h-fit w-full p-5 text-2xl sm:w-fit">
 	<div class="text-center" bind:this={typeItElement} />
 </div>

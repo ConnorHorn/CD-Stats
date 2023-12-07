@@ -5,7 +5,7 @@
 </script>
 
 <div class="flex flex-col items-center justify-center text-center">
-	<div class="flex justify-center items-center mb-2">
+	<div class="mb-2 flex items-center justify-center">
 		<GradientText size="70px">{value}</GradientText>
 	</div>
 	<span class="font-bold">Days Visited</span>

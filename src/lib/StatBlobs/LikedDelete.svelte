@@ -8,7 +8,7 @@
 </script>
 
 <div class="flex flex-col items-center justify-center text-center">
-	<div class="flex justify-center items-center mr-1">
+	<div class="mr-1 flex items-center justify-center">
 		<GradientText size="70px">{value}</GradientText>
 	</div>
 	<span class="font-bold">{plural} Given to Deleted Posts</span>
