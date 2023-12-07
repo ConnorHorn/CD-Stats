@@ -22,19 +22,19 @@
 
 	let extraImages = ['1', '2', '3', '4', '5'];
 
-	if (daysSince(archiveData.firstPost) > 5800) {
+	if (daysSince(archiveData.firstPost) > 5400) {
 		imageName = 'old';
 	} else if (daysSince(archiveData.firstPost) < 365) {
 		imageName = 'young';
-	} else if (bookmarksCount > 80) {
-		imageName = 'nerd';
 	} else if (visitsData.avgTimePerPost > 42) {
 		imageName = 'slow';
-	} else if (archiveData.likeCount > 5000) {
+	} else if (archiveData.likeCount > 4000) {
 		imageName = 'popular';
-	} else if (archiveData.postCount > 1100) {
+	} else if (archiveData.postCount > 1300) {
 		imageName = 'yapper';
-	} else if (flagsData.totalCount > 30) {
+	} else if (bookmarksCount > 80) {
+		imageName = 'nerd';
+	}else if (flagsData.totalCount > 40) {
 		imageName = 'flagger';
 	} else {
 		imageName = extraImages[randomImage(username)];
