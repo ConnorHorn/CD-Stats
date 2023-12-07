@@ -102,8 +102,8 @@
 <main class="main-container">
 	<div class="chart-container">
 		<div>
-		<canvas bind:this={radarChartElement} />
-	</div>
+			<canvas bind:this={radarChartElement} />
+		</div>
 	</div>
 </main>
 
