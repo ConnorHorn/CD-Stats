@@ -11,7 +11,3 @@ export const titleRGB = writable('rgba(255, 255, 255');
 export const displayUsername = writable('User');
 
 export const storyDone = writable(false);
-
-
-
-

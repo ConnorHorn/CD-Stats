@@ -1,85 +1,84 @@
 <script>
-    import { onMount } from 'svelte';
-    import { browser } from '$app/environment';
-    import Chart from 'chart.js/auto';
-    import {primaryRGB, titleRGB} from "$lib/store.js";
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	import Chart from 'chart.js/auto';
+	import { primaryRGB, titleRGB } from '$lib/store.js';
 
-    let barChartElement;
+	let barChartElement;
 
-    export let array;
+	export let array;
 
-    // Convert data from seconds to hours and process your array data
-    const labels = array.map(item => item[0]); // Assuming the labels are now years
-    const dataValues = array.map(item => item[1] / 3600); // Convert seconds to hours
+	// Convert data from seconds to hours and process your array data
+	const labels = array.map((item) => item[0]); // Assuming the labels are now years
+	const dataValues = array.map((item) => item[1] / 3600); // Convert seconds to hours
 
-    // Function to determine the rounding based on the data magnitude
-    function dynamicRounding(num) {
-        if (num < 1000) return Math.round(num); // No rounding for small numbers
-        const digits = Math.pow(10, Math.floor(Math.log10(num)) - 1);
-        return Math.round(num / digits) * digits;
-    }
+	// Function to determine the rounding based on the data magnitude
+	function dynamicRounding(num) {
+		if (num < 1000) return Math.round(num); // No rounding for small numbers
+		const digits = Math.pow(10, Math.floor(Math.log10(num)) - 1);
+		return Math.round(num / digits) * digits;
+	}
 
-    // Calculate min and max for scaling
-    // const minValue = Math.min(...dataValues);
-    const maxValue = Math.max(...dataValues);
-    const scaledMin = 0;
-    const scaledMax = dynamicRounding(maxValue * 1.1);
+	// Calculate min and max for scaling
+	// const minValue = Math.min(...dataValues);
+	const maxValue = Math.max(...dataValues);
+	const scaledMin = 0;
+	const scaledMax = dynamicRounding(maxValue * 1.1);
 
-    const chartData = {
-        labels: labels,
-        datasets: [{
-            label: 'Hours',
-            data: dataValues,
-            backgroundColor: $primaryRGB + ',0.7)',
-            borderColor: $primaryRGB + ',1)',
-            borderWidth: 1
-        }]
-    };
+	const chartData = {
+		labels: labels,
+		datasets: [
+			{
+				label: 'Hours',
+				data: dataValues,
+				backgroundColor: $primaryRGB + ',0.7)',
+				borderColor: $primaryRGB + ',1)',
+				borderWidth: 1
+			}
+		]
+	};
 
-    const chartOptions = {
-        responsive: true,
-        scales: {
-            y: {
-                min: scaledMin,
-                max: scaledMax,
-                // Automatically adjust tick intervals
-                ticks: {
-                    callback: function(value, index, ticks) {
-                        return dynamicRounding(value);
-                    }
-                }
+	const chartOptions = {
+		responsive: true,
+		scales: {
+			y: {
+				min: scaledMin,
+				max: scaledMax,
+				// Automatically adjust tick intervals
+				ticks: {
+					callback: function (value, index, ticks) {
+						return dynamicRounding(value);
+					}
+				}
+			}
+		},
+		plugins: {
+			legend: {
+				display: false
+			},
+			title: {
+				display: true,
+				text: 'Hours Spent Reading Each Year',
+				font: {
+					size: 15,
+					weight: 'bold'
+				},
+				color: $titleRGB + ',0.7)'
+			}
+		}
+	};
 
-            }
-        },
-        plugins: {
-            legend: {
-                display: false
-            },
-            title: {
-                display: true,
-                text: 'Hours Spent Reading Each Year',
-                font: {
-                    size: 15,
-                    weight: 'bold'
-                },
-                color: $titleRGB + ',0.7)'
-            }
-        }
-    };
-
-    onMount(() => {
-        if (browser) {
-            new Chart(barChartElement, {
-                type: 'bar',
-                data: chartData,
-                options: chartOptions
-            });
-        }
-    });
+	onMount(() => {
+		if (browser) {
+			new Chart(barChartElement, {
+				type: 'bar',
+				data: chartData,
+				options: chartOptions
+			});
+		}
+	});
 </script>
 
-<main class="main-container">
-    <section>
-        <canvas bind:this={barChartElement}></canvas>
-    </section>
-</main>
+<div class="flex h-full items-center justify-center">
+	<canvas bind:this={barChartElement} />
+</div>
