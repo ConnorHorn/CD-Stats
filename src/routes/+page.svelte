@@ -144,10 +144,10 @@
 
 	<div class="flex h-screen flex-col justify-between">
 		<div class="flex flex-grow flex-col items-center justify-center">
-			<GradientText class="mb-4" {size}>CD-stats</GradientText>
+			<GradientText  {size}>CD-stats</GradientText>
 
 			<div class="h-64 w-2/3 p-6 text-center lg:w-1/3">
-				<FileDropzone bind:files on:change={handleFiles} class="h-full w-full">
+				<FileDropzone bind:files on:change={handleFiles} class="h-full w-full" name="dropzone">
 					<span
 						slot="message"
 						class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"

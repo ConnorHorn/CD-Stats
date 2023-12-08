@@ -87,6 +87,8 @@ function calcFlags(data) {
 				firstFlagDate = createdAt;
 			}
 
+
+
 			// Increment counts
 			totalCount++;
 			monthlyCountMap.set(monthYearKey, (monthlyCountMap.get(monthYearKey) || 0) + 1);
@@ -134,9 +136,24 @@ function calcFlags(data) {
 	flagLeaderboardArray.sort((a, b) => b[1] - a[1]); // Sort the flag leaderboard by count
 
 	// Format the first flag date as "mm/dd/yyyy"
-	const firstFlagDateString = firstFlagDate
-		? `${firstFlagDate.getMonth() + 1}/${firstFlagDate.getDate()}/${firstFlagDate.getFullYear()}`
-		: '';
+
+	const formatDate = (date) => {
+		if (!date || isNaN(date.getTime())) {
+			return null;
+		}
+
+		// Options for formatting the date
+		const options = {
+			year: 'numeric',
+			month: 'numeric',
+			day: 'numeric'
+		};
+
+		// Format the date according to the user's local settings
+		return new Intl.DateTimeFormat(undefined, options).format(date);
+	};
+
+	const firstFlagDateString = firstFlagDate ? formatDate(firstFlagDate) : '';
 
 	return {
 		monthlyCountArray: sortedMonths,
@@ -348,11 +365,20 @@ function calcArchive(data) {
 			? new Date(Math.min(...nonPmDateStrings.map((dateString) => new Date(dateString))))
 			: null;
 
-	const formatDateDMY = (date) => {
+	const formatDate = (date) => {
 		if (!date || isNaN(date.getTime())) {
 			return null;
 		}
-		return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+
+		// Options for formatting the date
+		const options = {
+			year: 'numeric',
+			month: 'numeric',
+			day: 'numeric'
+		};
+
+		// Format the date according to the user's local settings
+		return new Intl.DateTimeFormat(undefined, options).format(date);
 	};
 
 	// Convert maps to arrays for output (no need to sort as they are already in order)
@@ -385,8 +411,10 @@ function calcArchive(data) {
 		.slice(0, 10)
 		.map(([category, count]) => [category, count]);
 
+	console.log(minNonPmDate)
+
 	return {
-		firstPost: minNonPmDate ? formatDateDMY(minNonPmDate) : '',
+		firstPost: minNonPmDate ? formatDate(minNonPmDate) : '',
 		topTopics,
 		postsByMonth,
 		postsByYear,
