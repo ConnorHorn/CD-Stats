@@ -411,7 +411,6 @@ function calcArchive(data) {
 		.slice(0, 10)
 		.map(([category, count]) => [category, count]);
 
-	console.log(minNonPmDate)
 
 	return {
 		firstPost: minNonPmDate ? formatDate(minNonPmDate) : '',
