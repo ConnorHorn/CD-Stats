@@ -24,7 +24,6 @@
 	const scaledMin = 0;
 	const scaledMax = dynamicRounding(maxValue * 1.1);
 
-	console.log(dataValues);
 
 	const chartData = {
 		labels: labels,
