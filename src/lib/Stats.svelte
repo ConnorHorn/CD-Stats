@@ -147,7 +147,7 @@
 		archiveData.likeCount
 	} Likes\n🔎 Got ${profile_view_count} Views On My Profile\n💀 Liked ${
 		likesData.likedDeletedPostCount
-	} Deleted Posts\n🤠Really Liked "${archiveData.topTopics[0][0]}"\n🔗https://cd-stats.com/`;
+	} Deleted Posts\n🤠 Really Liked "${archiveData.topTopics[0][0]}"\n🔗 https://cd-stats.com/`;
 
 	async function handleShare() {
 		if (navigator.share) {
