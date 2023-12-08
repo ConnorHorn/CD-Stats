@@ -26,7 +26,7 @@
 		imageName = 'old';
 	} else if (daysSince(archiveData.firstPost) < 365) {
 		imageName = 'young';
-	} else if (visitsData.avgTimePerPost > 42) {
+	} else if (visitsData.avgTimePerPost > 26) {
 		imageName = 'slow';
 	} else if (archiveData.likeCount > 4000) {
 		imageName = 'popular';

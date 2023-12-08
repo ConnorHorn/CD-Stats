@@ -389,6 +389,25 @@ function calcArchive(data) {
 		return new Intl.DateTimeFormat(undefined, options).format(date);
 	};
 
+	const reformatDateKeys = (map, forMonth = true) => {
+		const newMap = new Map();
+		for (const [key, value] of map) {
+			let formattedKey = key;
+			if (forMonth) {
+				const [year, month] = key.split('-');
+				formattedKey = `${parseInt(month, 10)}/${year}`; // Formats as '1/2019', '2/2019', etc.
+			} // For years, the key remains the same (YYYY)
+			newMap.set(formattedKey, value);
+		}
+		return newMap;
+	};
+
+
+	postsByMonthMap = reformatDateKeys(postsByMonthMap, true);
+	pmsByMonthMap = reformatDateKeys(pmsByMonthMap, true);
+	postsByYearMap = reformatDateKeys(postsByYearMap, false);
+	likesByMonthMap = reformatDateKeys(likesByMonthMap, true);
+
 	// Convert maps to arrays for output (no need to sort as they are already in order)
 	let postsByMonth = Array.from(postsByMonthMap);
 	let postsByYear = Array.from(postsByYearMap);

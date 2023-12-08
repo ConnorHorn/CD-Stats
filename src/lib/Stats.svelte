@@ -133,7 +133,7 @@
 
 	let avgTimeEmoji = '🐇';
 
-	if (visitsData.avgTimePerPost > 25) {
+	if (visitsData.avgTimePerPost > 22) {
 		avgTimeEmoji = '🐢';
 	}
 
@@ -194,7 +194,7 @@
 
 			<!-- Buttons container -->
 			<div class="mt-1 flex justify-center gap-3">
-				{#if !/Mobi|Android/i.test(navigator.userAgent)}
+				{#if !/Mobi|Android/i.test(navigator.userAgent) && /Chrome|Chromium|Edg/i.test(navigator.userAgent)}
 					<button
 						type="button"
 						class="variant-filled-secondary btn btn-sm"
