@@ -39,7 +39,7 @@
 	import BlockedUsers from '$lib/StatBlobs/BlockedUsers.svelte';
 	import ProfileViews from '$lib/StatBlobs/ProfileViews.svelte';
 	import { fade, fly } from 'svelte/transition';
-	import LikesGiven from "$lib/StatBlobs/LikesGiven.svelte";
+	import LikesGiven from '$lib/StatBlobs/LikesGiven.svelte';
 
 	export let badgesLeaderboard;
 	export let bookmarksCount;
@@ -293,8 +293,8 @@
 	</div>
 
 	<div
-			class="card col-span-1 row-span-1 p-5"
-			in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
+		class="card col-span-1 row-span-1 p-5"
+		in:fly={{ y: Math.random() * 300 - 150, x: Math.random() * 300 - 150, duration: 750 }}
 	>
 		<LikesGiven value={likesData.totalLikes} />
 	</div>

@@ -222,7 +222,6 @@ function calcLikes(data) {
 	};
 }
 
-
 function calcArchive(data) {
 	const headers = data[0];
 	const rows = data.slice(1).filter((row) => row[headers.indexOf('created_at')]);

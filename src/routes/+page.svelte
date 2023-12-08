@@ -161,7 +161,7 @@
 		<div class="absolute bottom-0 left-0 p-4 text-base text-white">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				class="h-16 w-16 cursor-pointer"
+				class=" h-10 w-10 cursor-pointer sm:h-16 sm:w-16"
 				id="help"
 				viewBox="0 0 24 24"
 				role="button"
@@ -200,16 +200,12 @@
 						<AccordionItem>
 							<svelte:fragment slot="summary">How do I know this is safe?</svelte:fragment>
 							<svelte:fragment slot="content"
-								>This is a great question and one that I had to work around quite a bit. The site
-								runs entirely in your browser, with no data leaving your computer. All of the
-								statistics and analytics are calculated locally, meaning nobody else can see them.
-								If you want to be extra cautious, you can unzip the data, and edit the user archive
-								CSV to set all the posts to be empty. You can also edit the preferences json to
-								delete any personal info. The page does not use any content from your posts text,
-								nor your email, or the like. You can validate the claims of privacy by watching the
-								Network tab of Inspect Element and see nothing is being exchanged beyond the initial
-								serving of the webpage. You can also turn your device to airplane mode after loading
-								the site</svelte:fragment
+								>CD-Stats is designed to run in your browser without sending your data elsewhere.
+								All analysis is done on your computer, so your information stays private. For extra
+								caution, you can remove post content or personal details from the data files. The
+								site doesn't use your post text, email, etc. You can check this by observing no data
+								exchange in the network section of inspect element after the site loads, or by using
+								the site in airplane mode.</svelte:fragment
 							>
 						</AccordionItem>
 						<!-- ... -->

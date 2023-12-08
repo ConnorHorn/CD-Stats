@@ -34,7 +34,7 @@
 		imageName = 'yapper';
 	} else if (bookmarksCount > 80) {
 		imageName = 'nerd';
-	}else if (flagsData.totalCount > 40) {
+	} else if (flagsData.totalCount > 40) {
 		imageName = 'flagger';
 	} else {
 		imageName = extraImages[randomImage(username)];
