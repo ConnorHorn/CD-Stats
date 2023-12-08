@@ -144,7 +144,7 @@
 
 	<div class="flex h-screen flex-col justify-between">
 		<div class="flex flex-grow flex-col items-center justify-center">
-			<GradientText  {size}>CD-stats</GradientText>
+			<GradientText {size}>CD-stats</GradientText>
 
 			<div class="h-64 w-2/3 p-6 text-center lg:w-1/3">
 				<FileDropzone bind:files on:change={handleFiles} class="h-full w-full" name="dropzone">
@@ -180,7 +180,7 @@
 
 		{#if $showHelpCard}
 			<div class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm">
-				<div class="w-7/8 card rounded bg-white p-4 shadow-lg sm:w-1/3">
+				<div class="card w-full rounded bg-white p-4 shadow-lg sm:w-1/3">
 					<Accordion>
 						<AccordionItem>
 							<svelte:fragment slot="summary">What is this?</svelte:fragment>
@@ -211,7 +211,7 @@
 						<!-- ... -->
 					</Accordion>
 					<button
-						class="mt-4 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-700"
+						class="mt-4 rounded bg-gray-300 px-4 py-2 text-black hover:bg-blue-700"
 						on:click={toggleHelpCard}>Close</button
 					>
 				</div>

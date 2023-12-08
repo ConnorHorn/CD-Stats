@@ -87,8 +87,6 @@ function calcFlags(data) {
 				firstFlagDate = createdAt;
 			}
 
-
-
 			// Increment counts
 			totalCount++;
 			monthlyCountMap.set(monthYearKey, (monthlyCountMap.get(monthYearKey) || 0) + 1);
@@ -410,7 +408,6 @@ function calcArchive(data) {
 		.sort((a, b) => b[1] - a[1])
 		.slice(0, 10)
 		.map(([category, count]) => [category, count]);
-
 
 	return {
 		firstPost: minNonPmDate ? formatDate(minNonPmDate) : '',

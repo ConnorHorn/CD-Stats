@@ -1,6 +1,6 @@
 <script>
 	import '../app.postcss';
-	import { initializeStores } from '@skeletonlabs/skeleton';
+	import { initializeStores, Toast } from '@skeletonlabs/skeleton';
 
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
@@ -10,3 +10,5 @@
 </script>
 
 <slot />
+
+<Toast />
