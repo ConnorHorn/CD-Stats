@@ -163,7 +163,6 @@ function calcFlags(data) {
 }
 
 function calcLikes(data) {
-
 	const headers = data[0];
 	const rows = data.slice(1);
 
@@ -227,14 +226,15 @@ function calcLikes(data) {
 		return result;
 	};
 
-	const startYear = rows.length > 0 ? new Date(convertToISO8601(rows[0][createdAtIndex])).getFullYear() : new Date().getFullYear();
+	const startYear =
+		rows.length > 0
+			? new Date(convertToISO8601(rows[0][createdAtIndex])).getFullYear()
+			: new Date().getFullYear();
 	const endYear = new Date().getFullYear();
 
 	const monthlyCounts = fillMissingDates(monthlyCountMap, startYear, endYear);
 	const yearlyCounts = fillMissingDates(yearlyCountMap, startYear, endYear, true);
 	const hourlyCounts = Array.from(hourlyCountMap, ([key, value]) => [key, value]);
-
-
 
 	return {
 		undidLikeCount,
@@ -245,7 +245,6 @@ function calcLikes(data) {
 		hourlyCounts
 	};
 }
-
 
 function calcArchive(data) {
 	const headers = data[0];
@@ -402,7 +401,6 @@ function calcArchive(data) {
 		return newMap;
 	};
 
-
 	postsByMonthMap = reformatDateKeys(postsByMonthMap, true);
 	pmsByMonthMap = reformatDateKeys(pmsByMonthMap, true);
 	postsByYearMap = reformatDateKeys(postsByYearMap, false);
@@ -439,7 +437,7 @@ function calcArchive(data) {
 		.map(([category, count]) => [category, count]);
 
 	return {
-		firstPost: minNonPmDate ? formatDate(minNonPmDate).toString(): '',
+		firstPost: minNonPmDate ? formatDate(minNonPmDate).toString() : '',
 		topTopics,
 		postsByMonth,
 		postsByYear,
