@@ -163,6 +163,7 @@ function calcFlags(data) {
 }
 
 function calcLikes(data) {
+
 	const headers = data[0];
 	const rows = data.slice(1);
 
@@ -183,6 +184,10 @@ function calcLikes(data) {
 		hourlyCountMap.set(`${i} PM`, 0);
 	}
 
+	function convertToISO8601(dateStr) {
+		return dateStr.replace(' UTC', '').replace(' ', 'T') + 'Z';
+	}
+
 	rows.forEach((row) => {
 		const createdAt = row[createdAtIndex];
 		const deletedBy = row[deletedByIndex];
@@ -191,9 +196,11 @@ function calcLikes(data) {
 		if (deletedBy === 'other') likedDeletedPostCount++;
 
 		if (createdAt) {
-			totalLikes++; // Increment totalLikes for each valid entry
+			totalLikes++;
 
-			const date = new Date(createdAt);
+			const convertedDate = convertToISO8601(createdAt);
+			const date = new Date(convertedDate);
+
 			const monthYear = `${date.getMonth() + 1}/${date.getFullYear()}`;
 			const year = `${date.getFullYear()}`;
 			const hour = date.getHours();
@@ -220,12 +227,14 @@ function calcLikes(data) {
 		return result;
 	};
 
-	const startYear = new Date(rows[0][createdAtIndex]).getFullYear();
+	const startYear = rows.length > 0 ? new Date(convertToISO8601(rows[0][createdAtIndex])).getFullYear() : new Date().getFullYear();
 	const endYear = new Date().getFullYear();
 
 	const monthlyCounts = fillMissingDates(monthlyCountMap, startYear, endYear);
 	const yearlyCounts = fillMissingDates(yearlyCountMap, startYear, endYear, true);
 	const hourlyCounts = Array.from(hourlyCountMap, ([key, value]) => [key, value]);
+
+
 
 	return {
 		undidLikeCount,
@@ -236,6 +245,7 @@ function calcLikes(data) {
 		hourlyCounts
 	};
 }
+
 
 function calcArchive(data) {
 	const headers = data[0];
@@ -410,7 +420,7 @@ function calcArchive(data) {
 		.map(([category, count]) => [category, count]);
 
 	return {
-		firstPost: minNonPmDate ? formatDate(minNonPmDate) : '',
+		firstPost: minNonPmDate ? formatDate(minNonPmDate).toString(): '',
 		topTopics,
 		postsByMonth,
 		postsByYear,
