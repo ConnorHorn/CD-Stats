@@ -156,6 +156,7 @@ function calcLikes(data) {
 
 	let undidLikeCount = 0;
 	let likedDeletedPostCount = 0;
+	let totalLikes = 0;
 
 	let monthlyCountMap = new Map();
 	let yearlyCountMap = new Map();
@@ -175,6 +176,8 @@ function calcLikes(data) {
 		if (deletedBy === 'other') likedDeletedPostCount++;
 
 		if (createdAt) {
+			totalLikes++; // Increment totalLikes for each valid entry
+
 			const date = new Date(createdAt);
 			const monthYear = `${date.getMonth() + 1}/${date.getFullYear()}`;
 			const year = `${date.getFullYear()}`;
@@ -187,7 +190,6 @@ function calcLikes(data) {
 		}
 	});
 
-	// Fill in missing months/years
 	const fillMissingDates = (countMap, startYear, endYear, isYearly = false) => {
 		const result = [];
 		for (let year = startYear; year <= endYear; year++) {
@@ -213,11 +215,13 @@ function calcLikes(data) {
 	return {
 		undidLikeCount,
 		likedDeletedPostCount,
+		totalLikes,
 		monthlyCounts,
 		yearlyCounts,
 		hourlyCounts
 	};
 }
+
 
 function calcArchive(data) {
 	const headers = data[0];
