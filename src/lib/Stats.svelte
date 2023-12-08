@@ -193,7 +193,7 @@
 			</div>
 
 			<!-- Buttons container -->
-			<div class="mt-1 flex justify-center gap-2">
+			<div class="mt-1 flex justify-center gap-3">
 				{#if !/Mobi|Android/i.test(navigator.userAgent)}
 					<button
 						type="button"
